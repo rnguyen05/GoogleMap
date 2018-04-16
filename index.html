@@ -78,8 +78,10 @@
     #right-panel {
       height: 100%;
       float: right;
-      width: auto;
+      width: fit-content;
       overflow: auto;
+      z-index: 1;
+      opacity: .5;
     }
 
   </style>
@@ -97,10 +99,11 @@
       <option value="TRANSIT">Transit</option>
   </select>
   
-  <!--detail direction panel-->
-  <div id="right-panel"></div>
+  
   <!--map-->
   <div id="map"></div>
+  <!--detail direction panel-->
+  <div id="right-panel">Details</div>
 
   <script>
     //Global Variables
@@ -114,11 +117,15 @@
             center: {lat: 34.251268, lng: -118.441183}
           });
           directionsDisplay.setMap(map);
-          //Display detail panel
-          directionsDisplay.setPanel(document.getElementById('right-panel'));
-          var control = document.getElementById('floating-panel');
-          // control.style.display = 'block';
-          map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+          $("#right-panel").on("click", function () {
+              //Display detail panel
+              directionsDisplay.setPanel(document.getElementById('right-panel'));
+              var control = document.getElementById('floating-panel');
+              // control.style.display = 'block';
+              map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+          });
+          
 
           
           //Event Listener to change on start location and travel mode
