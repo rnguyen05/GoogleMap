@@ -125,8 +125,9 @@
           // document.getElementById('mode').addEventListener('change', function() {
           //   calculateAndDisplayRoute(directionsService, directionsDisplay);
           // });
-          
-          // Bias the autocomplete object to the user's geographical location,
+    }//end of init function
+
+    // Bias the autocomplete object to the user's geographical location,
           // as supplied by the browser's 'navigator.geolocation' object.
           function geolocate() {
             if (navigator.geolocation) {
@@ -144,9 +145,6 @@
             }
           }//end of geolocate()
 
-    }//end of init function
-
-    
 
 
     //calculate and display route base on travel mode
@@ -171,7 +169,7 @@
             window.alert('Directions request failed due to ' + status);
           }
         });
-      }
+      }//end of function calculateAndDisplayRoute
 
 
 
