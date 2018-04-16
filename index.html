@@ -65,16 +65,12 @@
       font-weight: 300;
     }
 
-    /* Right Panel Style */
-    #right-panel {
+    /* Details Panel Style */
+    #bottom-panel {
       font-family: 'Roboto','sans-serif';
       line-height: 30px;
       padding-left: 10px;
-    }
-    #right-panel i {
       font-size: 12px;
-    }
-    #right-panel {
       height: 100%;
       float: right;
       width: fit-content;
@@ -102,7 +98,7 @@
   <!--map-->
   <div id="map"></div>
   <!--detail direction panel-->
-  <div id="right-panel"></div>
+  <div id="bottom-panel"></div>
 
   <script>
     //Global Variables
@@ -124,7 +120,7 @@
           //Details Button click
           document.getElementById('detailsBtn').addEventListener('click', function () {
               //Display detail panel
-              directionsDisplay.setPanel(document.getElementById('right-panel'));
+              directionsDisplay.setPanel(document.getElementById('bottom-panel'));
               var control = document.getElementById('floating-panel');
               // control.style.display = 'block';
               map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
