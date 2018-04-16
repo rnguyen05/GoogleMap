@@ -104,6 +104,10 @@
             center: {lat: 34.251268, lng: -118.441183}
           });
           directionsDisplay.setMap(map);
+          //Display initial map location
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+
           //start and end location
           var onChangeHandler = function() {
               calculateAndDisplayRoute(directionsService, directionsDisplay);
