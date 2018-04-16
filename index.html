@@ -110,6 +110,16 @@
     //Global Variables
     var placeSearch, autocomplete, marker;
 
+    $("#detailsBtn").on("click", function () {
+              //Display detail panel
+              directionsDisplay.setPanel(document.getElementById('right-panel'));
+              var control = document.getElementById('floating-panel');
+              // control.style.display = 'block';
+              map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+    });
+
+
+    
     function init () {
           var directionsDisplay = new google.maps.DirectionsRenderer;
           var directionsService = new google.maps.DirectionsService;
@@ -119,13 +129,7 @@
           });
           directionsDisplay.setMap(map);
 
-          $("#detailsBtn").on("click", function () {
-              //Display detail panel
-              directionsDisplay.setPanel(document.getElementById('right-panel'));
-              var control = document.getElementById('floating-panel');
-              // control.style.display = 'block';
-              map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-          });
+          
           
 
           
