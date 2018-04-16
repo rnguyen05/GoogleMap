@@ -99,11 +99,12 @@
       <option value="TRANSIT">Transit</option>
   </select>
   
+  <button id="detailsBtn">Details</button>
   
   <!--map-->
   <div id="map"></div>
   <!--detail direction panel-->
-  <div id="right-panel">Details</div>
+  <div id="right-panel"></div>
 
   <script>
     //Global Variables
@@ -118,7 +119,7 @@
           });
           directionsDisplay.setMap(map);
 
-          $("#right-panel").on("click", function () {
+          $("#detailsBtn").on("click", function () {
               //Display detail panel
               directionsDisplay.setPanel(document.getElementById('right-panel'));
               var control = document.getElementById('floating-panel');
