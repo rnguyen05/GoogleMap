@@ -105,14 +105,16 @@
           });
           directionsDisplay.setMap(map);
 
-          //start and end location
-          var onChangeHandler = function() {
-              calculateAndDisplayRoute(directionsService, directionsDisplay);
-          };
           //Invoke function calculateAndDisplayRoute on change of location and travel mode
           document.getElementById('start').addEventListener('change', onChangeHandler);
           document.getElementById('end').addEventListener('change', onChangeHandler);
           document.getElementById('mode').addEventListener('change', onChangeHandler);
+          //start and end location
+          var onChangeHandler = function() {
+              calculateAndDisplayRoute(directionsService, directionsDisplay);
+          };
+          
+          
           
 
           // Create the autocomplete object, restricting the search to geographical
