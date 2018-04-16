@@ -93,7 +93,7 @@
       <option value="TRANSIT">Transit</option>
   </select>
   
-  <button id="detailsBtn" class="btn btn-secondary controls">Details</button>
+  <button id="detailsBtn" class="btn btn-secondary">Details</button>
   
   <!--map-->
   <div id="map"></div>
@@ -104,15 +104,11 @@
     //Global Variables
     var placeSearch, autocomplete, marker;
 
-    
-
-
-
     function init () {
           var directionsDisplay = new google.maps.DirectionsRenderer;
           var directionsService = new google.maps.DirectionsService;
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 18,
+            zoom: 14,
             center: {lat: 34.251268, lng: -118.441183}
           });
           directionsDisplay.setMap(map);
@@ -125,8 +121,6 @@
               control.style.display = 'block';
               map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
           });
-          
-
           
           //Event Listener to change on start location and travel mode
           var onChangeHandler = function() {
@@ -208,11 +202,9 @@
           }
         });
       }//end of function calculateAndDisplayRoute
-
-
-
   </script>
    
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvNNu33wLTWD5g2DwWs61iWawPsb5fPM&libraries=places&callback=init"
     async defer></script>
 </body>
